@@ -1,6 +1,12 @@
 main {
     margin: 100px auto;
-    width: 500px;
+    max-width: 500px;
+}
+
+h1 {
+    letter-spacing: 5px;
+    color: #213e80;
+    font-size: 1.5em;
 }
 
 form {
@@ -29,7 +35,10 @@ form button {
     display: flex;
     justify-content: space-between;
 }
-
+#list li span:nth-child(1) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 #list li span:nth-child(2) {
     color: #c82972;
     cursor: pointer;
@@ -38,4 +47,5 @@ form button {
     height: 20px;
     width: 20px;
     text-align: center;
+    min-width: 20px;
 }

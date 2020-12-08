@@ -24,6 +24,8 @@ function addItem(value, id) {
     itemClose.addEventListener('click', remove);
     item.appendChild(itemText);
     item.appendChild(itemClose);
+    item.classList.add('animate__fadeInUp');
+    item.classList.add('animate__animated');
     list.appendChild(item);
 }
 
@@ -38,12 +40,18 @@ function add(event) {
     if (text.value) {
         collection.add({title: text.value}).then(res => {
             addItem(text.value, res.id);
+            text.value = '';
         });
     }
 }
 
 function remove(event) {
     var index = event.target.getAttribute('index')
-    event.target.parentElement.remove();
+    var li = event.target.parentElement;
+    li.classList.remove('animate__fadeInUp');
+    li.classList.add('animate__fadeOutLeft');
+    setTimeout(() => {
+        li.remove();
+    }, 700);
     collection.doc(index).delete();
 }
