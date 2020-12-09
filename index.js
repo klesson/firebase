@@ -29,7 +29,7 @@ function addItem(value, id) {
     list.appendChild(item);
 }
 
-collection.get().then(snapshot => {
+collection.orderBy('time').get().then(snapshot => {
     snapshot.forEach(doc => {
         addItem(doc.data().title, doc.id);
     });
@@ -38,7 +38,7 @@ collection.get().then(snapshot => {
 function add(event) {
     event.preventDefault();
     if (text.value) {
-        collection.add({title: text.value}).then(res => {
+        collection.add({title: text.value, time: Date.now()}).then(res => {
             addItem(text.value, res.id);
             text.value = '';
         });
