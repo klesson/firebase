@@ -1,24 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Новогодние поздравления</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header></header>
     <main>
-        <h1>Мои дела:</h1>
+        <h1>Новогодние поздравления</h1>
         <form onsubmit="add(event)">
-            <input type="text" id="text" required>
-            <button type="submit">Добавить</button>
+            <input type="text" id="text" maxlength="100" placeholder="Напишите свое новогоднее пожелание" required>
+            <button type="submit" title="Добавить поздравление" id="submit">
+                <img src="img/giftbox.svg" width="32">
+            </button>
         </form>
         <ul id="list">
         </ul>
     </main>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❄
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❄
+        </div>
+        <div class="snowflake">
+        ❅
+        </div>
+        <div class="snowflake">
+        ❆
+        </div>
+        <div class="snowflake">
+        ❄
+        </div>
+      </div>
   
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
